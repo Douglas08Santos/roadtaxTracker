@@ -39,6 +39,9 @@ def car_plate():
     a2 = ["F", "J", "K", "L"]
 
     a3 = list(map(chr, range(65, 91)))
+    a3 = ['A'] + a3[:0:-1]
+    for x in ['F','I','N','0','Q']:
+        a3.remove(x)
 
     gen_a1 = random.choice(a1)
     gen_a2 = random.choice(a2)
@@ -67,12 +70,8 @@ def car_plate():
 
     number = str(gen_num1) + str(gen_num2) + str(gen_num3) + str(gen_num4)
 
-    sufix = ''
-
-    alphabet_sufix = ['A'] + a3[:0:-1]
-    for x in ['F','I','N','0','Q']:
-        alphabet_sufix.remove(x)
-    sufix = alphabet_sufix[compute%19]
+    sufix = ''  
+    sufix = a3[compute%19]
     else:
         raise ValueError
 
@@ -89,7 +88,11 @@ def goods_plate():
     a1 = "G"
 
     a2 = ["T", "U", "V", "W", "X", "Y", "Z", "BA", "BB", "BC", "BD", "BE"]
-
+    
+    a3 = list(map(chr, range(65, 91)))
+    a3 = ['A'] + a3[:0:-1]
+    for x in ['F','I','N','0','Q']:
+        a3.remove(x)
     
     gen_a1, gen_a2 = random.choice(a1), random.choice(a2)
     
@@ -117,12 +120,8 @@ def goods_plate():
     number = str(gen_num1) + str(gen_num2) + str(gen_num3) + str(gen_num4)
 
     sufix = ''
-    a3 = list(map(chr, range(65, 91)))
-
-    alphabet_sufix = ['A'] + a3[:0:-1]
-    for x in ['F','I','N','0','Q']:
-        alphabet_sufix.remove(x)
-    sufix = alphabet_sufix[compute%19]
+    
+    sufix = a3[compute%19]
     else:
         raise ValueError
 
