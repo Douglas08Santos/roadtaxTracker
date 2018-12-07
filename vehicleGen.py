@@ -69,7 +69,7 @@ def car_plate():
 
     sufix = ''
 
-    alphabet_sufix = ['A'] + alphabet[:25:1]
+    alphabet_sufix = ['A'] + a3[:0:-1]
     for x in ['F','I','N','0','Q']:
         alphabet_sufix.remove(x)
     sufix = alphabet_sufix[compute%19]
@@ -90,6 +90,7 @@ def goods_plate():
 
     a2 = ["T", "U", "V", "W", "X", "Y", "Z", "BA", "BB", "BC", "BD", "BE"]
 
+    
     gen_a1 = random.choice(a1)
     gen_a2 = random.choice(a2)
 
@@ -122,12 +123,12 @@ def goods_plate():
     number = str(gen_num1) + str(gen_num2) + str(gen_num3) + str(gen_num4)
 
     sufix = ''
+    a3 = list(map(chr, range(65, 91)))
 
-    ialphabet_sufix = ['A'] + alphabet[:25:1]
+    alphabet_sufix = ['A'] + a3[:0:-1]
     for x in ['F','I','N','0','Q']:
         alphabet_sufix.remove(x)
     sufix = alphabet_sufix[compute%19]
-    
     else:
         raise ValueError
 
