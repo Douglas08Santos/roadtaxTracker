@@ -38,8 +38,7 @@ def car_plate():
 
     a2 = ["F", "J", "K", "L"]
 
-    a3 = ["A", "B", "C", "D", "E", "F", "G", "H", "J", "K", "L", "M",
-          "N", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", ]
+    a3 = list(map(chr, range(65, 91)))
 
     gen_a1 = random.choice(a1)
     gen_a2 = random.choice(a2)
@@ -70,44 +69,10 @@ def car_plate():
 
     sufix = ''
 
-    if compute % 19 == 0:
-        sufix = 'A'
-    elif compute % 19 == 1:
-        sufix = 'Z'
-    elif compute % 19 == 2:
-        sufix = 'Y'
-    elif compute % 19 == 3:
-        sufix = 'X'
-    elif compute % 19 == 4:
-        sufix = 'U'
-    elif compute % 19 == 5:
-        sufix = 'T'
-    elif compute % 19 == 6:
-        sufix = 'S'
-    elif compute % 19 == 7:
-        sufix = 'R'
-    elif compute % 19 == 8:
-        sufix = 'P'
-    elif compute % 19 == 9:
-        sufix = 'M'
-    elif compute % 19 == 10:
-        sufix = 'L'
-    elif compute % 19 == 11:
-        sufix = 'K'
-    elif compute % 19 == 12:
-        sufix = 'J'
-    elif compute % 19 == 13:
-        sufix = 'H'
-    elif compute % 19 == 14:
-        sufix = 'G'
-    elif compute % 19 == 15:
-        sufix = 'E'
-    elif compute % 19 == 16:
-        sufix = 'D'
-    elif compute % 19 == 17:
-        sufix = 'C'
-    elif compute % 19 == 18:
-        sufix = 'B'
+    alphabet_sufix = ['A'] + alphabet[:25:1]
+    for x in ['F','I','N','0','Q']:
+        alphabet_sufix.remove(x)
+    sufix = alphabet_sufix[compute%19]
     else:
         raise ValueError
 
@@ -158,44 +123,11 @@ def goods_plate():
 
     sufix = ''
 
-    if compute % 19 == 0:
-        sufix = 'A'
-    elif compute % 19 == 1:
-        sufix = 'Z'
-    elif compute % 19 == 2:
-        sufix = 'Y'
-    elif compute % 19 == 3:
-        sufix = 'X'
-    elif compute % 19 == 4:
-        sufix = 'U'
-    elif compute % 19 == 5:
-        sufix = 'T'
-    elif compute % 19 == 6:
-        sufix = 'S'
-    elif compute % 19 == 7:
-        sufix = 'R'
-    elif compute % 19 == 8:
-        sufix = 'P'
-    elif compute % 19 == 9:
-        sufix = 'M'
-    elif compute % 19 == 10:
-        sufix = 'L'
-    elif compute % 19 == 11:
-        sufix = 'K'
-    elif compute % 19 == 12:
-        sufix = 'J'
-    elif compute % 19 == 13:
-        sufix = 'H'
-    elif compute % 19 == 14:
-        sufix = 'G'
-    elif compute % 19 == 15:
-        sufix = 'E'
-    elif compute % 19 == 16:
-        sufix = 'D'
-    elif compute % 19 == 17:
-        sufix = 'C'
-    elif compute % 19 == 18:
-        sufix = 'B'
+    ialphabet_sufix = ['A'] + alphabet[:25:1]
+    for x in ['F','I','N','0','Q']:
+        alphabet_sufix.remove(x)
+    sufix = alphabet_sufix[compute%19]
+    
     else:
         raise ValueError
 
