@@ -91,9 +91,8 @@ def goods_plate():
     a2 = ["T", "U", "V", "W", "X", "Y", "Z", "BA", "BB", "BC", "BD", "BE"]
 
     
-    gen_a1 = random.choice(a1)
-    gen_a2 = random.choice(a2)
-
+    gen_a1, gen_a2 = random.choice(a1), random.choice(a2)
+    
     gen_num1 = random.randint(0, 9)
     gen_num2 = random.randint(0, 9)
     gen_num3 = random.randint(0, 9)
@@ -101,23 +100,18 @@ def goods_plate():
 
     prefix = gen_a1 + gen_a2
 
-    csalp2 = 0
-    csalp3 = 0
+    csalp2 = csalp3 = 0    
 
     if len(prefix) == 2:
 
-        csalp2 = (ord(prefix[0].lower()) - 96) * 9
-        csalp3 = (ord(prefix[1].lower()) - 96) * 4
-
+        csalp2, csalp3 = (ord(prefix[0].lower()) - 96) * 9, (ord(prefix[1].lower()) - 96) * 4
+        
     else:
-        csalp2 = (ord(prefix[1].lower()) - 96) * 9
-        csalp3 = (ord(prefix[2].lower()) - 96) * 4
+        csalp2, csalp3 = (ord(prefix[1].lower()) - 96) * 9, (ord(prefix[2].lower()) - 96) * 4
+        
 
-    csnum1 = gen_num1 * 5
-    csnum2 = gen_num2 * 4
-    csnum3 = gen_num3 * 3
-    csnum4 = gen_num4 * 2
-
+    csnum1, csnum2, csnum3, csnum4 = gen_num1 * 5, gen_num2 * 4, gen_num3 * 3, gen_num4 * 2
+    
     compute = csalp2 + csalp3 + csnum1 + csnum2 + csnum3 + csnum4
 
     number = str(gen_num1) + str(gen_num2) + str(gen_num3) + str(gen_num4)
